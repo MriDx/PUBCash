@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view"
+    
+    >
+
+        <item android:id="@+id/navMyProfile"
+            android:icon="@drawable/ic_profile"
+            android:title="My Profile"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/navWallet"
+            android:icon="@drawable/ic_wallet"
+            android:title="My Wallet"
+            app:showAsAction="always"
+            />
+        <item
+            android:id="@+id/navEditprofile"
+            android:icon="@drawable/ic_edit1"
+            android:title="Edit Profile"
+            app:showAsAction="ifRoom"
+            />
+
+   <item android:title="Matches">
+        <menu>
+                <item android:id="@+id/navMatches"
+                        android:title="Available Matches"
+                        app:showAsAction="always" />
+                <!--<item android:id="@+id/myResults"
+                    android:title="My Results"
+                    app:showAsAction="always" />-->
+                <item android:id="@+id/navResults"
+                    android:title="Results"
+                    app:showAsAction="always"
+                    />
+                <item android:id="@+id/topPlayer"
+                        android:title="Top Player"
+                        app:showAsAction="always" />
+
+        </menu>
+    </item>
+
+
+    <item android:title="Contact us" >
+        <menu>
+            <item android:id="@+id/whatsapp"
+                android:title="WhatsApp"
+                app:showAsAction="ifRoom"
+                />
+
+            <item android:id="@+id/mail"
+                android:title="Drop a Mail"
+                app:showAsAction="ifRoom"
+                />
+        </menu>
+    </item>
+
+    <item android:title="Options" >
+        <menu>
+            <item android:id="@+id/navLogout"
+            android:title="Logout"
+            app:showAsAction="ifRoom" />
+        </menu>
+    </item>
+
+</menu>

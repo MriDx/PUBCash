@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/rupee"
+        android:layout_centerVertical="true"
+        android:id="@+id/addmoneyStatic1"
+        android:layout_marginStart="20dp"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/addmoneyStatic1"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/addmoneyStatic1"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:inputType="numberDecimal"
+            android:id="@+id/addmoneyAmount"
+            android:hint="Amount"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addmoneyStatic1"
+        android:text="Add"
+        android:id="@+id/addmoneyAdd"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_border"
+        />
+
+</RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

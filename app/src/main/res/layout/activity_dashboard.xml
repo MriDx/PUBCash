@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/co"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme.Dark">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/dashboardParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/profileLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/dashboardProfileImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true" />
+                <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/editProfileFab"
+                    android:src="@drawable/ic_edit"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    android:layout_gravity="start"
+                    app:fabCustomSize="40dp"
+                    android:visibility="gone"
+                    android:clickable="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="30dp"
+                    android:paddingRight="10dp"
+                    android:layout_centerInParent="true"
+                    android:onClick="toogleEdit"
+                    />-->
+
+                <!--<ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/ic_error"
+                    android:visibility="gone"
+                    android:id="@+id/completeProfileAlert"
+                    android:layout_toEndOf="@+id/dashboardProfileImage"
+                    android:layout_marginStart="30dp"
+                    />-->
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/profileInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileLayout"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nameView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="#ffffff" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--<androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/userNameLabel"
+                        android:text="Username : "
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_marginLeft="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:textColor="#ffffff"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/userNameView"
+                        android:layout_toRightOf="@+id/userNameLabel"
+                        android:layout_marginLeft="5dp"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:text=""
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#ffffff"
+                        />-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/balLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Balance (Rs) :"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#ffffff" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/balView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/balLabel"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text=""
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearStatic1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileInfo"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/dashboardStatic1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_image"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:divider="@color/colorPrimaryDark"
+                    android:elevation="10dp"
+                    android:padding="10dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="5dp"
+                    app:strokeColor="@color/oil"
+                    app:strokeWidth="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <LinearLayout
+                            android:id="@+id/testLayout1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/mPlayed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="0"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Match Joined "
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/testLayout2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/mKill"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="0"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Total Kill"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/testLayout3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:gravity="right"
+                            android:orientation="vertical"
+                            android:padding="10dp"
+                            android:paddingRight="20dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/mWin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="0"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Amount Won"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/appCompatTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Notices"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/noticeBody"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="* Matches will starts from tomorrow"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_menu"
+        android:layout_gravity="bottom"
+        android:theme="@style/BottomNavigationTheme"
+        >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:id="@+id/bottomCons"
+        >
+
+        <View
+            android:id="@+id/divider22"
+            android:layout_width="1dp"
+            android:layout_height="24dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/divider21"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider20"
+            android:layout_width="1dp"
+            android:layout_height="24dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider21"
+            android:layout_width="1dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="yt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/divider20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/yt" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="fb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/divider21"
+            app:layout_constraintStart_toEndOf="@+id/divider20"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/fb" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="ig"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/divider22"
+            app:layout_constraintStart_toEndOf="@+id/divider21"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ig" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:onClick="dc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/divider22"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/dc" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/co"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme.Dark">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sc"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/dashboardParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/profileLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/dashboardProfileImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:onClick="toogleEdit" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/editProfileFab"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="30dp"
+                    android:clickable="true"
+                    android:onClick="toogleEdit"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/ic_edit"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:fabCustomSize="40dp" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/profileInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileLayout"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nameView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="#ffffff" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--<androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/userNameLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Username : "
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#ffffff" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/userNameView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/userNameLabel"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text=""
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#ffffff" />-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/balLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Balance (Rs) :"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#ffffff" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/balView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/balLabel"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text=""
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileInfo">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/dashboardStatic1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_image"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:divider="@color/colorPrimaryDark"
+                    android:elevation="10dp"
+                    android:padding="10dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="5dp"
+                    app:strokeColor="@color/oil"
+                    app:strokeWidth="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <LinearLayout
+                            android:id="@+id/testLayout1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/mPlayed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="10"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Match Played "
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/testLayout2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/mKill"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="10"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Total Kill"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/testLayout3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:gravity="right"
+                            android:orientation="vertical"
+                            android:padding="10dp"
+                            android:paddingRight="20dp">
+
+                            <TextView
+                                android:id="@+id/mWin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="10"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Amount Won"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
